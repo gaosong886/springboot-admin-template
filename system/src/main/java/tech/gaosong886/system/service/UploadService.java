@@ -9,31 +9,30 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
-import tech.gaosong886.system.model.vo.FileUploadVO;
+import tech.gaosong886.system.config.UploadConfig;
+import tech.gaosong886.system.model.vo.UploadedFileVO;
 
 @Service
 public class UploadService {
     private static final List<String> ALLOWED_TYPES = Arrays.asList("image/jpeg", "image/png");
 
-    @Value("${upload.dir}")
-    private String uploadDir;
-
-    @Value("${upload.base-url}")
-    private String uploadBaseUrl;
+    @Autowired
+    private UploadConfig uploadConfig;
 
     /**
      * 上传文件
+     * 
      * @param file
-     * @return FileUploadVO
+     * @return UploadedFileVO
      */
     @SuppressWarnings("null")
-    public FileUploadVO upload(MultipartFile file) {
+    public UploadedFileVO upload(MultipartFile file) {
         if (file.isEmpty()) {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST,
@@ -52,12 +51,12 @@ public class UploadService {
             String fileName = createUniqueFileName(file.getOriginalFilename());
 
             // 创建上传目录（如果不存在）
-            Files.createDirectories(Paths.get(uploadDir));
+            Files.createDirectories(Paths.get(this.uploadConfig.getDir()));
 
-            Path filePath = Paths.get(uploadDir + "/" + fileName);
+            Path filePath = Paths.get(this.uploadConfig.getDir() + "/" + fileName);
             file.transferTo(filePath.toFile());
 
-            return new FileUploadVO(fileName, "done", uploadBaseUrl + "/" + fileName);
+            return new UploadedFileVO(fileName, "done", this.uploadConfig.getBaseUrl() + "/" + fileName);
         } catch (Exception e) {
             e.printStackTrace();
             throw new ResponseStatusException(
@@ -68,6 +67,7 @@ public class UploadService {
 
     /**
      * 生成文件名
+     * 
      * @param originalFilename 原文件名
      * @return 生成的新文件名
      */

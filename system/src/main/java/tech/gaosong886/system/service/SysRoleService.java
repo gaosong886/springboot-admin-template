@@ -30,6 +30,7 @@ public class SysRoleService {
 
     /**
      * 创建角色
+     * 
      * @param sysRoleDTO
      * @return SysRoleVO 对象
      */
@@ -53,9 +54,9 @@ public class SysRoleService {
         return SysRoleMapper.INSTANCE.entityToVO(entity);
     }
 
-
     /**
      * 更新角色信息
+     * 
      * @param roleId
      * @param sysRoleDTO
      * @return SysRoleVO 对象
@@ -85,6 +86,7 @@ public class SysRoleService {
 
     /**
      * 删除角色
+     * 
      * @param roleId
      */
     public void delete(int roleId) {
@@ -98,6 +100,7 @@ public class SysRoleService {
 
     /**
      * 列表查询
+     * 
      * @return List<SysRoleVO> 角色列表
      */
     public List<SysRoleVO> list() {
@@ -106,6 +109,7 @@ public class SysRoleService {
 
     /**
      * 保存角色权限至 Redis
+     * 
      * @param roleId
      * @param permissions 权限集合
      */
@@ -116,6 +120,7 @@ public class SysRoleService {
 
     /**
      * 判断角色是否有指定权限
+     * 
      * @param roleId
      * @param permissionString 权限字符串
      * @return true / false

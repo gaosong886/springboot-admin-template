@@ -63,6 +63,6 @@ public class SysMenuController {
     public List<SysMenuVO> menu(HttpServletRequest httpServletRequest) {
         JwtPayloadDTO payload = (JwtPayloadDTO) httpServletRequest.getAttribute(JwtStatics.JWT_PAYLOAD_USER_KEY);
         return this.sysMenuService
-                .listByRoleIds(payload.getRoles().stream().map(JwtPayloadUserRoleDTO::getId).toList());
+                .listByRoleIds(payload.roles().stream().map(JwtPayloadUserRoleDTO::id).toList());
     }
 }

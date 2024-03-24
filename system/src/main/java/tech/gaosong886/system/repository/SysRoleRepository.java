@@ -11,8 +11,7 @@ import java.util.List;
 @Repository
 public interface SysRoleRepository extends JpaRepository<SysRoleEntity, Serializable> {
     @SuppressWarnings("null")
-    @Query("SELECT e FROM SysRoleEntity e " +
-            "LEFT JOIN FETCH e.menus m")
+    @Query("SELECT e FROM SysRoleEntity e LEFT JOIN FETCH e.menus")
     List<SysRoleEntity> findAll();
 
     List<SysRoleEntity> findByIdIn(Collection<Integer> ids);

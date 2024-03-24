@@ -55,9 +55,9 @@ public class AccessPermissionInterceptor implements HandlerInterceptor {
 
         JwtPayloadDTO payload = (JwtPayloadDTO) httpServletRequest.getAttribute(JwtStatics.JWT_PAYLOAD_USER_KEY);
 
-        if (payload != null && payload.getRoles() != null && payload.getRoles().size() > 0) {
-            for (JwtPayloadUserRoleDTO role : payload.getRoles()) {
-                int roleId = role.getId();
+        if (payload != null && payload.roles() != null && payload.roles().size() > 0) {
+            for (JwtPayloadUserRoleDTO role : payload.roles()) {
+                int roleId = role.id();
 
                 // 管理员角色直接放行
                 if (roleId == 1)
@@ -69,6 +69,6 @@ public class AccessPermissionInterceptor implements HandlerInterceptor {
         }
 
         throw new ResponseStatusException(HttpStatus.FORBIDDEN,
-                    "Permission denied.");
+                "Permission denied.");
     }
 }

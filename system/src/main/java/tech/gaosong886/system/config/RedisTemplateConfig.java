@@ -27,7 +27,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
  * Redis Template 配置类
  */
 @Configuration
-public class RedisConfig {
+public class RedisTemplateConfig {
         @Bean
         RedisTemplate<String, Object> redisTemplate(LettuceConnectionFactory lettuceConnectionFactory) {
                 RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();

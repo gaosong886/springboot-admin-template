@@ -33,10 +33,11 @@ public class ResponseAdvice implements ResponseBodyAdvice<Object> {
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType,
             Class<? extends HttpMessageConverter<?>> aClass, ServerHttpRequest serverHttpRequest,
             ServerHttpResponse serverHttpResponse) {
-        if (o instanceof String)
-            return objectMapper.writeValueAsString(ApiResponse.success(o));
-        if (o instanceof ApiResponse)
-            return o;
+
+        if (o instanceof String s)
+            return objectMapper.writeValueAsString(ApiResponse.success(s));
+        if (o instanceof ApiResponse r)
+            return r;
 
         return ApiResponse.success(o);
     }

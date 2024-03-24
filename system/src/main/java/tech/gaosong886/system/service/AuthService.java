@@ -24,6 +24,7 @@ public class AuthService {
 
     /**
      * 登录验证
+     * 
      * @param loginDTO
      * @return JwtTokenVO 对象
      */
@@ -34,12 +35,13 @@ public class AuthService {
 
     /**
      * 刷新 Token
+     * 
      * @param jwtPayload 解码后的 JWT 载荷对象
      * @return JwtTokenVO 对象
      */
     public JwtTokenVO refreshAuthToken(JwtPayloadDTO jwtPayload) {
-        SysUserVO sysUserVO = this.sysUserService.getSysUserFromCache(jwtPayload.getId());
-        if (sysUserVO == null || sysUserVO.getAccountStatus() == AccountStatus.BANNED.value)
+        SysUserVO sysUserVO = this.sysUserService.getSysUserFromCache(jwtPayload.id());
+        if (sysUserVO == null || sysUserVO.accountStatus() == AccountStatus.BANNED.value)
             throw new ResponseStatusException(HttpStatus.FORBIDDEN,
                     "Invalid user.");
         return this.jwtService.generateTokenPair(SysUserMapper.INSTANCE.voToJwtPayload(sysUserVO));
@@ -47,6 +49,7 @@ public class AuthService {
 
     /**
      * 生成 Jwt Token
+     * 
      * @param sysUserVO
      * @return JwtTokenVO 对象
      */

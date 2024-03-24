@@ -1,7 +1,5 @@
 package tech.gaosong886.shared.auth.interceptor;
 
-import java.lang.reflect.Method;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -35,10 +33,9 @@ public class JwtAuthInterceptor implements HandlerInterceptor {
             return true;
 
         HandlerMethod handlerMethod = (HandlerMethod) handler;
-        Method method = handlerMethod.getMethod();
 
         // 如果方法带有 @AllowAnonymous 注解，放行
-        if (method.isAnnotationPresent(AllowAnonymous.class))
+        if (handlerMethod.getMethod().isAnnotationPresent(AllowAnonymous.class))
             return true;
 
         String token = this.jwtService.getTokenFromRequest(httpServletRequest);

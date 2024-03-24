@@ -36,6 +36,7 @@ public class SysUserService {
 
     /**
      * 创建账号
+     * 
      * @param createSysUserDTO
      * @return SysUserVO 对象
      */
@@ -62,6 +63,7 @@ public class SysUserService {
 
     /**
      * 更新账号信息
+     * 
      * @param userId
      * @param updateSysUserDTO
      * @return SysUserVO 对象
@@ -91,6 +93,7 @@ public class SysUserService {
 
     /**
      * 删除账号
+     * 
      * @param userId
      */
     public void delete(int userId) {
@@ -99,6 +102,7 @@ public class SysUserService {
 
     /**
      * 分页查询
+     * 
      * @param pageDTO
      * @return PagePayloadVO<SysUserVO> 分页对象
      */
@@ -124,6 +128,7 @@ public class SysUserService {
 
     /**
      * 验证账号密码
+     * 
      * @param username
      * @param password
      * @return SysUserVO 对象
@@ -148,6 +153,7 @@ public class SysUserService {
 
     /**
      * 获取用户信息
+     * 
      * @param userId
      * @return SysUserVO 对象
      */
@@ -157,6 +163,7 @@ public class SysUserService {
 
     /**
      * 根据用户 id 查询
+     * 
      * @param userId
      * @return SysUserEntity 实体
      */
@@ -166,6 +173,7 @@ public class SysUserService {
 
     /**
      * 从缓存中获取用户信息
+     * 
      * @param userId
      * @return SysUserVO 对象
      */
@@ -184,10 +192,11 @@ public class SysUserService {
 
     /**
      * 将用户信息更新至缓存
+     * 
      * @param sysUserVO
      */
     @SuppressWarnings("null")
     public void saveSysUserToCache(SysUserVO sysUserVO) {
-        redisTemplate.opsForValue().set(RedisKey.SYS_USER(sysUserVO.getId()), sysUserVO);
+        redisTemplate.opsForValue().set(RedisKey.SYS_USER(sysUserVO.id()), sysUserVO);
     }
 }

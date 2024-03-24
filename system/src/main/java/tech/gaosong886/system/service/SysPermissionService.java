@@ -23,6 +23,7 @@ public class SysPermissionService {
 
     /**
      * 列表查询
+     * 
      * @return List<SysPermissionVO> 权限列表
      */
     public List<SysPermissionVO> list() {
@@ -31,6 +32,7 @@ public class SysPermissionService {
 
     /**
      * 保存权限
+     * 
      * @param names 待保存的权限名称集合
      */
     @SuppressWarnings("null")
@@ -42,6 +44,7 @@ public class SysPermissionService {
 
     /**
      * 删除权限
+     * 
      * @param names 待删除的权限名称集合
      */
     public void deleteByNameIn(Set<String> names) {
@@ -50,6 +53,7 @@ public class SysPermissionService {
 
     /**
      * 根据控制器的方法句柄拼装权限字符串
+     * 
      * @param handlerMethod 方法句柄
      * @return 形式如 demo:update 的权限字符串
      */
@@ -72,6 +76,7 @@ public class SysPermissionService {
 
     /**
      * 同步权限数据到数据库
+     * 
      * @param newSet 权限字符串集合
      */
     @Transactional(propagation = Propagation.REQUIRED)
@@ -79,7 +84,7 @@ public class SysPermissionService {
         List<SysPermissionVO> permissionInDB = this.list();
 
         // 把查询结果转为集合
-        Set<String> oldSet = permissionInDB.stream().map(p -> p.getName()).collect(Collectors.toSet());
+        Set<String> oldSet = permissionInDB.stream().map(p -> p.name()).collect(Collectors.toSet());
 
         // 比较本地和数据库两个集合
         // 取出待保存的新权限

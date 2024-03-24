@@ -34,7 +34,9 @@ public class AuthController {
     @AllowAnonymous
     @PostMapping("refresh")
     public JwtTokenVO refresh(@RequestBody JwtTokenVO jwtToken) {
-        JwtPayloadDTO jwtPayload = this.jwtService.verify(JwtTokenType.REFRESH.value, jwtToken.getRefreshToken(),
+        JwtPayloadDTO jwtPayload = this.jwtService.verify(
+                JwtTokenType.REFRESH.value,
+                jwtToken.refreshToken(),
                 JwtPayloadDTO.class);
         return this.authService.refreshAuthToken(jwtPayload);
     }

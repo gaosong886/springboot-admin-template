@@ -32,6 +32,7 @@ public class SysMenuService {
 
     /**
      * 创建菜单节点
+     * 
      * @param sysMenuDTO
      * @return SysMenuVO 对象
      */
@@ -50,6 +51,7 @@ public class SysMenuService {
 
     /**
      * 更新菜单节点
+     * 
      * @param menuId
      * @param sysMenuDTO
      */
@@ -81,6 +83,7 @@ public class SysMenuService {
 
     /**
      * 显示 / 隐藏菜单节点
+     * 
      * @param menuId
      */
     public void hide(int menuId) {
@@ -91,6 +94,7 @@ public class SysMenuService {
 
     /**
      * 删除节点
+     * 
      * @param menuId
      */
     public void delete(int menuId) {
@@ -119,6 +123,7 @@ public class SysMenuService {
 
     /**
      * 列表查询
+     * 
      * @return List<SysMenuVO> 全部菜单节点列表
      */
     public List<SysMenuVO> list() {
@@ -128,6 +133,7 @@ public class SysMenuService {
 
     /**
      * 查询角色可显示的菜单
+     * 
      * @param roleIds 角色 id 列表
      * @return List<SysMenuVO> 菜单列表
      */
@@ -145,6 +151,7 @@ public class SysMenuService {
 
     /**
      * 同步角色权限到 Redis
+     * 
      * @param roleIds 角色 id 列表
      */
     private void syncRolePermissionsByRoleIds(List<Integer> roleIds) {

@@ -18,7 +18,7 @@ import tech.gaosong886.shared.pagination.model.vo.PagePayloadVO;
 import tech.gaosong886.system.annotation.AvoidPermission;
 import tech.gaosong886.system.model.dto.SysUserCreateDTO;
 import tech.gaosong886.system.model.dto.SysUserUpdateDTO;
-import tech.gaosong886.system.model.vo.FileUploadVO;
+import tech.gaosong886.system.model.vo.UploadedFileVO;
 import tech.gaosong886.system.model.vo.SysUserVO;
 import tech.gaosong886.system.service.SysUserService;
 import tech.gaosong886.system.service.UploadService;
@@ -34,13 +34,13 @@ public class SysUserController {
     private SysUserService sysUserService;
 
     @Autowired
-    private UploadService uploadService;
+    private UploadService fileUploadService;
 
     @AvoidPermission()
     @GetMapping("profile")
     public SysUserVO profile(HttpServletRequest httpServletRequest) {
         JwtPayloadDTO payload = (JwtPayloadDTO) httpServletRequest.getAttribute(JwtStatics.JWT_PAYLOAD_USER_KEY);
-        return this.sysUserService.getUserProfile(payload.getId());
+        return this.sysUserService.getUserProfile(payload.id());
     }
 
     @PostMapping("page")
@@ -68,7 +68,7 @@ public class SysUserController {
     }
 
     @PostMapping("photo")
-    public FileUploadVO photo(@RequestParam("file") MultipartFile file) {
-        return this.uploadService.upload(file);
+    public UploadedFileVO photo(@RequestParam("file") MultipartFile file) {
+        return this.fileUploadService.upload(file);
     }
 }

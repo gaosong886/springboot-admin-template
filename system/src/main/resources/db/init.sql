@@ -39,7 +39,7 @@ CREATE TABLE `sys_menu`  (
 -- ----------------------------
 INSERT INTO `sys_menu` VALUES (1, 'Welcome', 1, 'HomeOutlined', 0, '/dashboard', 1, 0, '2023-12-21 22:17:29', '2023-12-21 22:17:29');
 INSERT INTO `sys_menu` VALUES (2, 'Settings', 0, 'SettingOutlined', 0, '', 2, 0, '2023-12-21 22:18:23', '2023-12-21 22:18:23');
-INSERT INTO `sys_menu` VALUES (3, 'Users', 0, 'SafetyCertificateOutlined', 2, '', 1, 0, '2023-12-21 22:18:58', '2023-12-21 22:18:58');
+INSERT INTO `sys_menu` VALUES (3, 'System', 0, 'SafetyCertificateOutlined', 2, '', 1, 0, '2023-12-21 22:18:58', '2023-12-21 22:18:58');
 INSERT INTO `sys_menu` VALUES (4, 'Menu', 1, 'ProfileOutlined', 3, '/system/auth-management/menu', 1, 0, '2023-12-21 22:19:45', '2023-12-21 22:19:45');
 INSERT INTO `sys_menu` VALUES (5, 'Role', 1, 'UsergroupAddOutlined', 3, '/system/auth-management/role', 2, 0, '2023-12-21 22:22:56', '2023-12-21 22:22:56');
 INSERT INTO `sys_menu` VALUES (6, 'User', 1, 'UserOutlined', 3, '/system/auth-management/user', 3, 0, '2023-12-21 22:23:12', '2023-12-21 22:23:12');
