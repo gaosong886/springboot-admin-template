@@ -56,7 +56,7 @@ public class RedisTemplateConfig {
                 // JsonTypeInfo.As.WRAPPER_ARRAY 表示类型信息将以包装数组的形式呈现
                 objectMapper.activateDefaultTyping(
                                 LaissezFaireSubTypeValidator.instance,
-                                ObjectMapper.DefaultTyping.NON_FINAL,
+                                ObjectMapper.DefaultTyping.EVERYTHING,
                                 JsonTypeInfo.As.WRAPPER_ARRAY);
 
                 // 禁用 SerializationFeature 中的 WRITE_DATES_AS_TIMESTAMPS 特性
