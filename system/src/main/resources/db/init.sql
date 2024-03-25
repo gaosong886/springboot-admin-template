@@ -38,23 +38,23 @@ CREATE TABLE `sys_menu`  (
 -- Records of sys_menu
 -- ----------------------------
 INSERT INTO `sys_menu` VALUES (1, 'Welcome', 1, 'HomeOutlined', 0, '/dashboard', 1, 0, '2023-12-21 22:17:29', '2023-12-21 22:17:29');
-INSERT INTO `sys_menu` VALUES (2, 'Settings', 0, 'SettingOutlined', 0, '', 2, 0, '2023-12-21 22:18:23', '2023-12-21 22:18:23');
+INSERT INTO `sys_menu` VALUES (2, 'Setting', 0, 'SettingOutlined', 0, '', 2, 0, '2023-12-21 22:18:23', '2023-12-21 22:18:23');
 INSERT INTO `sys_menu` VALUES (3, 'System', 0, 'SafetyCertificateOutlined', 2, '', 1, 0, '2023-12-21 22:18:58', '2023-12-21 22:18:58');
-INSERT INTO `sys_menu` VALUES (4, 'Menu', 1, 'ProfileOutlined', 3, '/system/auth-management/menu', 1, 0, '2023-12-21 22:19:45', '2023-12-21 22:19:45');
-INSERT INTO `sys_menu` VALUES (5, 'Role', 1, 'UsergroupAddOutlined', 3, '/system/auth-management/role', 2, 0, '2023-12-21 22:22:56', '2023-12-21 22:22:56');
-INSERT INTO `sys_menu` VALUES (6, 'User', 1, 'UserOutlined', 3, '/system/auth-management/user', 3, 0, '2023-12-21 22:23:12', '2023-12-21 22:23:12');
-INSERT INTO `sys_menu` VALUES (8, '列表', 2, '', 4, '', 1, 0, '2023-12-21 22:34:48', '2023-12-21 22:34:48');
-INSERT INTO `sys_menu` VALUES (9, '新增', 2, '', 4, '', 2, 0, '2023-12-21 22:35:44', '2023-12-21 22:35:44');
-INSERT INTO `sys_menu` VALUES (10, '编辑', 2, '', 4, '', 3, 0, '2023-12-21 22:36:04', '2023-12-21 22:36:04');
-INSERT INTO `sys_menu` VALUES (11, '删除', 2, '', 4, '', 4, 0, '2023-12-21 22:36:26', '2023-12-21 22:36:26');
-INSERT INTO `sys_menu` VALUES (12, '列表', 2, '', 5, '', 1, 0, '2023-12-21 22:37:21', '2023-12-21 22:37:21');
-INSERT INTO `sys_menu` VALUES (13, '新增', 2, '', 5, '', 2, 0, '2023-12-21 22:37:51', '2023-12-21 22:37:51');
-INSERT INTO `sys_menu` VALUES (14, '编辑', 2, '', 5, '', 3, 0, '2023-12-21 22:39:01', '2023-12-21 22:39:01');
-INSERT INTO `sys_menu` VALUES (15, '删除', 2, '', 5, '', 4, 0, '2023-12-21 22:39:35', '2023-12-21 22:39:35');
-INSERT INTO `sys_menu` VALUES (16, '列表', 2, '', 6, '', 1, 0, '2023-12-21 22:40:55', '2023-12-21 22:40:55');
-INSERT INTO `sys_menu` VALUES (17, '新增', 2, '', 6, '', 2, 0, '2023-12-21 22:41:24', '2023-12-21 22:41:24');
-INSERT INTO `sys_menu` VALUES (18, '编辑', 2, '', 6, '', 3, 0, '2023-12-21 22:42:06', '2023-12-21 22:42:06');
-INSERT INTO `sys_menu` VALUES (19, '删除', 2, '', 6, '', 4, 0, '2023-12-21 22:42:27', '2023-12-21 22:42:27');
+INSERT INTO `sys_menu` VALUES (4, 'Menu', 1, 'ProfileOutlined', 3, '/setting/system/menu', 1, 0, '2023-12-21 22:19:45', '2023-12-21 22:19:45');
+INSERT INTO `sys_menu` VALUES (5, 'Role', 1, 'UsergroupAddOutlined', 3, '/setting/system/role', 2, 0, '2023-12-21 22:22:56', '2023-12-21 22:22:56');
+INSERT INTO `sys_menu` VALUES (6, 'User', 1, 'UserOutlined', 3, '/setting/system/user', 3, 0, '2023-12-21 22:23:12', '2023-12-21 22:23:12');
+INSERT INTO `sys_menu` VALUES (8, 'List', 2, '', 4, '', 1, 0, '2023-12-21 22:34:48', '2023-12-21 22:34:48');
+INSERT INTO `sys_menu` VALUES (9, 'Create', 2, '', 4, '', 2, 0, '2023-12-21 22:35:44', '2023-12-21 22:35:44');
+INSERT INTO `sys_menu` VALUES (10, 'Edit', 2, '', 4, '', 3, 0, '2023-12-21 22:36:04', '2023-12-21 22:36:04');
+INSERT INTO `sys_menu` VALUES (11, 'Delete', 2, '', 4, '', 4, 0, '2023-12-21 22:36:26', '2023-12-21 22:36:26');
+INSERT INTO `sys_menu` VALUES (12, 'List', 2, '', 5, '', 1, 0, '2023-12-21 22:37:21', '2023-12-21 22:37:21');
+INSERT INTO `sys_menu` VALUES (13, 'Create', 2, '', 5, '', 2, 0, '2023-12-21 22:37:51', '2023-12-21 22:37:51');
+INSERT INTO `sys_menu` VALUES (14, 'Edit', 2, '', 5, '', 3, 0, '2023-12-21 22:39:01', '2023-12-21 22:39:01');
+INSERT INTO `sys_menu` VALUES (15, 'Delete', 2, '', 5, '', 4, 0, '2023-12-21 22:39:35', '2023-12-21 22:39:35');
+INSERT INTO `sys_menu` VALUES (16, 'List', 2, '', 6, '', 1, 0, '2023-12-21 22:40:55', '2023-12-21 22:40:55');
+INSERT INTO `sys_menu` VALUES (17, 'Create', 2, '', 6, '', 2, 0, '2023-12-21 22:41:24', '2023-12-21 22:41:24');
+INSERT INTO `sys_menu` VALUES (18, 'Edit', 2, '', 6, '', 3, 0, '2023-12-21 22:42:06', '2023-12-21 22:42:06');
+INSERT INTO `sys_menu` VALUES (19, 'Delete', 2, '', 6, '', 4, 0, '2023-12-21 22:42:27', '2023-12-21 22:42:27');
 
 -- ----------------------------
 -- Table structure for sys_menu_permission
@@ -203,7 +203,7 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 'http://gaosong886.tech/static/1703987652616-254335841.jpeg', 'Gao Song', 'admin', '$2a$10$a5ksxl/djxZpr7RyD5u0WOsFFZKO/9zvXMZ8EQJCR6x1C.IJod51O', 0, '', '2023-12-21 22:00:22', '2023-12-21 22:00:22');
+INSERT INTO `sys_user` VALUES (1, 'http://gaosong886.tech/static/1703987652616-254335841.jpeg', 'GaoSong', 'admin', '$2a$10$a5ksxl/djxZpr7RyD5u0WOsFFZKO/9zvXMZ8EQJCR6x1C.IJod51O', 0, '', '2023-12-21 22:00:22', '2023-12-21 22:00:22');
 
 -- ----------------------------
 -- Table structure for sys_user_role
